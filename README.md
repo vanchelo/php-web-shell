@@ -6,3 +6,7 @@ Available in two versions **full** ([index.php](./index.php)) and **minified** (
 
 ![](./s_1.png)
 ![](./s_2.png)
+
+## License and Copyright
+
+This software released under the terms of the [MIT license](./LICENSE).
